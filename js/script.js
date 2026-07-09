@@ -172,16 +172,6 @@ if (window.gsap) {
     // Navbar logo: subtle fade + slide-down entrance on load
     gsap.from('.logo', { opacity: 0, y: -10, duration: 0.6, ease: 'power2.out' });
 
-    // Hero: animate in on load, staggered (only on pages that have a hero)
-    if (document.querySelector('.hero')) {
-      var heroTl = gsap.timeline({ defaults: { ease: 'power3.out', duration: 1 } });
-      heroTl
-        .to('.hero .reveal-line', { opacity: 1, y: 0, stagger: 0.12 })
-        .to('.hero .hero-sub.reveal', { opacity: 1, y: 0 }, '-=0.6')
-        .to('.hero .hero-media.reveal', { opacity: 1, y: 0 }, '-=0.5')
-        .to('.hero .hero-cta-row.reveal', { opacity: 1, y: 0 }, '-=0.4');
-    }
-
     // Everything else: reveal on scroll into view
     document.querySelectorAll('.section .reveal, .site-footer .reveal').forEach(function (el) {
       gsap.to(el, {
