@@ -26,6 +26,10 @@
 <!-- Custom cursor: glowing crosshair that follows the mouse -->
 <div class="custom-cursor" id="customCursor" aria-hidden="true"><svg viewBox="0 0 200 200"><path fill-rule="evenodd" clip-rule="evenodd" d="M100 12L190 188H10L100 12ZM100 88L142 178H58L100 88Z" fill="currentColor"/><path d="M100 140L124 182H76L100 140Z" fill="currentColor"/></svg></div>
 
+<!-- Global cosmic background: fixed full-viewport canvas + readability scrim, sits behind every section -->
+<canvas id="bgCanvas" class="bg-canvas" aria-hidden="true"></canvas>
+<div class="bg-scrim" aria-hidden="true"></div>
+
 <!-- Ambient rising particles behind everything -->
 <div class="ambient-particles" aria-hidden="true" id="particles"></div>
 
@@ -46,18 +50,18 @@
 <main>
   <section class="section apply-section glow-tr confirmation-section" style="padding-top: 9rem;">
     <div class="container confirmation-container">
-      <h1 class="reveal">You Just Made The Move.</h1>
+      <h1 class="reveal">You Just Made The <span class="ascend-teal">Move</span>.</h1>
       <p class="reveal">
         That hesitation you felt right before you clicked apply? That's exactly what's kept
-        guys stuck before, and you didn't let it win this time. That's the whole game.
+        guys stuck before, and <span class="accent-italic">you didn't let it win this time</span>. That's the whole game.
       </p>
       <p class="reveal">
         Here's what happens next: keep an eye on your email and phone for your call
-        confirmation. Show up ready to have an honest, no-pressure conversation about
+        confirmation. Show up ready to have an <span class="accent-italic">honest, no-pressure conversation</span> about
         where you're at and where you actually want to be. No pitch, no gimmicks, just
-        a real look at whether Project Ascend is the right fit for you.
+        a real look at whether <span class="accent-italic">Project Ascend is the right fit for you</span>.
       </p>
-      <p class="reveal confirmation-signoff">See you on the call.</p>
+      <p class="reveal confirmation-signoff">See you on the call.<span class="ascend-star" aria-hidden="true"><svg viewBox="0 0 20 20" fill="currentColor"><path d="M10,1 L11.77,8.23 L19,10 L11.77,11.77 L10,19 L8.23,11.77 L1,10 L8.23,8.23 Z"></path></svg></span></p>
     </div>
   </section>
 </main>
@@ -79,6 +83,7 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="js/hero-canvas.js"></script>
 <script src="js/script.js"></script>
 </body>
 </html>

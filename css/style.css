@@ -879,7 +879,7 @@ h2 {
   line-height: 1.75;
   margin-bottom: 1.3rem;
 }
-.confirmation-signoff { color: var(--text); font-weight: 700; font-size: 1.2rem; }
+.confirmation-container p.confirmation-signoff { color: var(--accent); font-weight: 800; font-size: 1.2rem; }
 
 /* ---------- Repeated per-section CTA ---------- */
 .section-cta {
