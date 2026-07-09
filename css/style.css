@@ -768,6 +768,7 @@ h2 {
 }
 .testimonial-photo-card { text-align: center; }
 .testimonial-photo {
+  position: relative;
   aspect-ratio: 4 / 5;
   border-radius: var(--radius-lg);
   background: var(--surface);
@@ -782,6 +783,42 @@ h2 {
   margin-bottom: 1.1rem;
 }
 .testimonial-photo img { width: 100%; height: 100%; object-fit: cover; }
+.testimonial-badge {
+  position: absolute;
+  top: 10px;
+  z-index: 2;
+  font-family: var(--font-display);
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  background: color-mix(in srgb, var(--bg) 82%, black);
+  border: 1px solid var(--accent);
+  border-radius: 999px;
+  padding: 0.22rem 0.55rem;
+  box-shadow: 0 0 8px var(--glow-cyan);
+}
+.testimonial-badge.before { left: 10px; }
+.testimonial-badge.after { right: 10px; }
+.testimonial-video-embed {
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-bottom: 56.25%;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  margin-bottom: 1.1rem;
+}
+.testimonial-video-embed iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
 .testimonial-photo-card:hover .testimonial-photo {
   transform: translateY(-4px);
   border-color: var(--accent);
@@ -789,6 +826,7 @@ h2 {
 }
 .testimonial-caption { font-weight: 700; font-size: 0.95rem; }
 .testimonial-caption span { color: var(--text-faint); font-weight: 500; }
+.testimonial-desc { margin-top: 0.5rem; color: var(--text-muted); font-size: 0.85rem; line-height: 1.55; }
 
 /* ---------- FAQ ---------- */
 .faq-list { display: flex; flex-direction: column; gap: 0.9rem; }
@@ -874,6 +912,17 @@ h2 {
 #apply .container { text-align: center; }
 #apply h2, #apply .section-sub { margin-left: auto; margin-right: auto; }
 .apply-form-container { min-height: 60vh; }
+.booking-reminder {
+  max-width: 620px;
+  margin: 0 0 2rem;
+  padding: 1rem 1.25rem;
+  border-left: 3px solid var(--accent);
+  background: color-mix(in srgb, var(--accent) 8%, transparent);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
 /* Let the dark starfield background show through around the Calendly embed
    instead of a boxed white card; internal Calendly iframe content itself
    is cross-origin and controlled by the widget's own background_color param. */
