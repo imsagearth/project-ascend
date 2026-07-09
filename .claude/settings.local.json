@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(claude plugin marketplace add anthropics/claude-code)",
+      "PowerShell($paths = @\\(\"$env:USERPROFILE\\\\.local\\\\bin\\\\claude.exe\", \"$env:USERPROFILE\\\\AppData\\\\Roaming\\\\npm\\\\claude.cmd\", \"$env:USERPROFILE\\\\AppData\\\\Local\\\\Programs\\\\claude-code\\\\claude.exe\", \"$env:LOCALAPPDATA\\\\AnthropicClaude\\\\claude.exe\"\\); foreach \\($p in $paths\\) { if \\(Test-Path $p\\) { Write-Output \"FOUND: $p\" } }; Get-ChildItem \"$env:USERPROFILE\\\\.local\\\\bin\" -ErrorAction SilentlyContinue | Select-Object -ExpandProperty Name)",
+      "PowerShell(try { \\(Get-Command claude.exe, claude.cmd, claude -ErrorAction Stop\\).Source } catch { \"not on PATH\" }; Get-ChildItem \"$env:LOCALAPPDATA\\\\Programs\" -Directory -ErrorAction SilentlyContinue | Select-Object -ExpandProperty Name)",
+      "PowerShell(Get-ChildItem \"$env:USERPROFILE\\\\.claude\" -ErrorAction SilentlyContinue | Select-Object Name, Mode; Test-Path \"$env:USERPROFILE\\\\.claude\\\\plugins\")",
+      "PowerShell(irm https://claude.ai/install.ps1 | iex)",
+      "PowerShell(& \"$env:USERPROFILE\\\\.local\\\\bin\\\\claude.exe\" plugin marketplace add anthropics/claude-code)"
+    ]
+  }
+}

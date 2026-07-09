@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Apply Now: Project Ascend</title>
+<meta name="description" content="Apply for 1-on-1 coaching with Project Ascend. Takes less than 5 minutes.">
+
+<!-- Theme is applied before paint to avoid a flash of the wrong theme -->
+<script>
+  (function () {
+    var saved = localStorage.getItem('ascend-theme');
+    var theme = saved === 'light' ? 'light' : 'dark';
+    document.documentElement.setAttribute('data-theme', theme);
+  })();
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Fraunces:ital,opsz,wght@1,9..144,400;1,9..144,500;1,9..144,600&family=Poppins:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- Custom cursor: glowing crosshair that follows the mouse -->
+<div class="custom-cursor" id="customCursor" aria-hidden="true"><svg viewBox="0 0 200 200"><path fill-rule="evenodd" clip-rule="evenodd" d="M100 12L190 188H10L100 12ZM100 88L142 178H58L100 88Z" fill="currentColor"/><path d="M100 140L124 182H76L100 140Z" fill="currentColor"/></svg></div>
+
+<!-- Ambient rising particles behind everything -->
+<div class="ambient-particles" aria-hidden="true" id="particles"></div>
+
+<header class="site-header" id="siteHeader">
+  <div class="container header-inner">
+    <a href="index.html" class="logo">
+      <svg class="logo-icon" viewBox="0 0 200 200" aria-hidden="true"><path fill-rule="evenodd" clip-rule="evenodd" d="M100 12L190 188H10L100 12ZM100 88L142 178H58L100 88Z" fill="currentColor"/><path d="M100 140L124 182H76L100 140Z" fill="currentColor"/></svg>
+    </a>
+    <div class="header-actions">
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle light and dark mode">
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4.5"></circle><path d="M12 2v3M12 19v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M2 12h3M19 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"></path></svg>
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 14.5A8.5 8.5 0 1 1 9.5 4a7 7 0 0 0 10.5 10.5Z"></path></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="section apply-section glow-tr" style="padding-top: 9rem;">
+    <div class="container apply-form-container">
+      <!--
+        Once submitted, set this form's redirect (in your Jotform account's
+        Settings -> Thank You Page) to point to: booking.html
+      -->
+      <script type="text/javascript" src="https://www.jotform.com/jsform/261072031762044"></script>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <a href="index.html" class="logo">
+      <svg class="logo-icon" viewBox="0 0 200 200" aria-hidden="true"><path fill-rule="evenodd" clip-rule="evenodd" d="M100 12L190 188H10L100 12ZM100 88L142 178H58L100 88Z" fill="currentColor"/><path d="M100 140L124 182H76L100 140Z" fill="currentColor"/></svg>
+    </a>
+    <div class="social-links">
+      <!-- Replace href="#" with your real social links -->
+      <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.5" r="1"></circle></svg></a>
+      <a href="#" aria-label="TikTok"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M16.5 3c.3 2 1.7 3.6 3.7 3.9v2.9c-1.4 0-2.7-.4-3.7-1.2v6.6c0 3.1-2.5 5.6-5.6 5.6S5.3 17.3 5.3 14.2c0-3 2.3-5.4 5.2-5.6v3c-1.2.2-2.2 1.3-2.2 2.6 0 1.5 1.2 2.7 2.7 2.7s2.7-1.2 2.7-2.7V3h2.8Z"></path></svg></a>
+      <a href="#" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2.5" y="5.5" width="19" height="13" rx="4"></rect><path d="M10.5 9.5v5l4.3-2.5-4.3-2.5Z" fill="currentColor" stroke="none"></path></svg></a>
+    </div>
+    <p class="footer-copy">© <span id="year"></span> Project Ascend. All rights reserved.</p>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="js/script.js"></script>
+</body>
+</html>

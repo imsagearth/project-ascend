@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Project Ascend: 1-on-1 Fat Loss Coaching for Men</title>
+<meta name="description" content="1-on-1 online coaching for men 22-35 who are done with restriction. Lose 20-30+ lbs, see your abs for the first time, and keep every meal you love.">
+
+<!-- Theme is applied before paint to avoid a flash of the wrong theme -->
+<script>
+  (function () {
+    var saved = localStorage.getItem('ascend-theme');
+    var theme = saved === 'light' ? 'light' : 'dark';
+    document.documentElement.setAttribute('data-theme', theme);
+  })();
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Fraunces:ital,opsz,wght@1,9..144,400;1,9..144,500;1,9..144,600&family=Poppins:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- Custom cursor: glowing crosshair that follows the mouse -->
+<div class="custom-cursor" id="customCursor" aria-hidden="true"><svg viewBox="0 0 200 200"><path fill-rule="evenodd" clip-rule="evenodd" d="M100 12L190 188H10L100 12ZM100 88L142 178H58L100 88Z" fill="currentColor"/><path d="M100 140L124 182H76L100 140Z" fill="currentColor"/></svg></div>
+
+<!-- Global cosmic background: fixed full-viewport canvas + readability scrim, sits behind every section -->
+<canvas id="bgCanvas" class="bg-canvas" aria-hidden="true"></canvas>
+<div class="bg-scrim" aria-hidden="true"></div>
+
+<!-- Ambient rising particles behind everything -->
+<div class="ambient-particles" aria-hidden="true" id="particles"></div>
+
+<header class="site-header" id="siteHeader">
+  <div class="container header-inner">
+    <a href="#top" class="logo">
+      <svg class="logo-icon" viewBox="0 0 200 200" aria-hidden="true"><path fill-rule="evenodd" clip-rule="evenodd" d="M100 12L190 188H10L100 12ZM100 88L142 178H58L100 88Z" fill="currentColor"/><path d="M100 140L124 182H76L100 140Z" fill="currentColor"/></svg>
+    </a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="#program" class="nav-link">The Program</a>
+      <a href="#testimonials" class="nav-link">Results</a>
+      <a href="#testimonials" class="nav-link">Testimonials</a>
+      <a href="#faq" class="nav-link">FAQ</a>
+    </nav>
+    <div class="header-actions">
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle light and dark mode">
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4.5"></circle><path d="M12 2v3M12 19v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M2 12h3M19 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"></path></svg>
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 14.5A8.5 8.5 0 1 1 9.5 4a7 7 0 0 0 10.5 10.5Z"></path></svg>
+      </button>
+      <a href="apply.html" class="btn btn-primary btn-small">Apply Now</a>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container hero-inner">
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <h1 class="hero-title">
+            <span class="line reveal-line">This Is The Version Of</span>
+            <span class="line reveal-line">You That <span class="highlight">Ascends.</span></span>
+            <span class="line line-sub reveal-line">Your Body, Your Mind, Your Lifestyle.</span>
+          </h1>
+          <p class="hero-sub reveal">
+            1:1 coaching for men who are done with strict diets that don't last. Lose 20–30+ lbs
+            while eating foods you actually love, see your abs for the first time, become the
+            most confident motherf*cker!
+          </p>
+        </div>
+        <div class="hero-media reveal">
+          <p class="video-label">Watch This Before Applying</p>
+          <div class="video-responsive">
+            <iframe src="https://www.youtube.com/embed/Tpo6SrvBWug?si=vmNuz46AKrIxtaUN" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </div>
+        </div>
+        <div class="hero-cta-row reveal">
+          <a href="apply.html" class="btn-mega">
+            <span class="btn-mega-title">Apply Now</span>
+            <span class="btn-mega-caption">Takes less than 5 minutes · We read every application</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="section" id="testimonials">
+    <div class="container">
+      <p class="eyebrow reveal">Results</p>
+      <h2 class="reveal h2-nowrap">Clients Who Already Ascended</h2>
+      <p class="section-sub reveal">Real transformations from men who followed this exact system.</p>
+
+      <div class="testimonial-grid reveal-group">
+        <div class="testimonial-photo-card reveal">
+          <div class="testimonial-photo">
+            <!-- Replace with a real client photo -->
+            <span>Add Photo</span>
+          </div>
+          <p class="testimonial-caption">Client Name <span>, result placeholder</span></p>
+        </div>
+        <div class="testimonial-photo-card reveal">
+          <div class="testimonial-photo">
+            <!-- Replace with a real client photo -->
+            <span>Add Photo</span>
+          </div>
+          <p class="testimonial-caption">Client Name <span>, result placeholder</span></p>
+        </div>
+        <div class="testimonial-photo-card reveal">
+          <div class="testimonial-photo">
+            <!-- Replace with a real client photo -->
+            <span>Add Photo</span>
+          </div>
+          <p class="testimonial-caption">Client Name <span>, result placeholder</span></p>
+        </div>
+      </div>
+
+      <div class="section-cta reveal">
+        <p>Ready to start ascending?</p>
+        <a href="apply.html" class="btn btn-primary btn-small">Apply Now For Strategy Call</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHO I AM -->
+  <section class="section alt-bg" id="who-i-am">
+    <div class="container who-grid">
+      <div class="who-photo reveal">
+        <!-- Replace with your real photo -->
+        <div class="photo-frame">
+          <span>Add Photo</span>
+        </div>
+      </div>
+      <div class="who-copy">
+        <p class="eyebrow reveal">Who I Am</p>
+        <h2 class="reveal h2-nowrap">I've Been Exactly Where You Are</h2>
+        <p class="reveal">
+          I lived this exact problem myself. Years of strict plans, starving myself,
+          cutting out every food I loved, and still getting heavier. It wasn't until
+          I threw out the all-or-nothing playbook that everything changed. I lost 60+ lbs
+          while still eating the foods I love, and kept it off.
+        </p>
+        <p class="reveal">
+          I'm not coaching from theory. I'm coaching from the map I actually walked,
+          and now I build that same map for the men I work with.
+        </p>
+        <div class="section-cta section-cta-left reveal">
+          <a href="apply.html" class="btn btn-primary btn-small">Apply Now For Strategy Call</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- THE PROBLEM -->
+  <section class="section glow-bl" id="problem">
+    <div class="container">
+      <p class="eyebrow reveal">The Problem</p>
+      <h2 class="reveal h2-tight">You've Heard This Story Before:<br>Because It's Yours</h2>
+      <p class="section-sub reveal">If any of this hits close to home, you're exactly who this was built for.</p>
+
+      <div class="card-grid reveal-group">
+        <div class="card reveal">
+          <h3>The Yo-Yo Cycle</h3>
+          <p>Strict diet, fast results, slow collapse. Every plan you've tried has ended the same way, back where you started, or heavier.</p>
+        </div>
+        <div class="card reveal">
+          <h3>The Monday Reset</h3>
+          <p>You're perfect Monday through Friday, then the weekend happens (dinners, drinks, plans with friends) and Monday you start over. Again.</p>
+        </div>
+        <div class="card reveal">
+          <h3>Motivation Runs Out</h3>
+          <p>You know the fundamentals. You've read the articles. But knowledge without a system just means you fall off in a more educated way.</p>
+        </div>
+        <div class="card reveal">
+          <h3>Scared It's Happening Again</h3>
+          <p>Part of you wants to commit, part of you is bracing for this to be another restrictive plan that ends in a binge and a step backward.</p>
+        </div>
+      </div>
+
+      <div class="section-cta reveal">
+        <p>Ready to start ascending?</p>
+        <a href="apply.html" class="btn btn-primary btn-small">Apply Now For Strategy Call</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- THE PROGRAM -->
+  <section class="section alt-bg glow-tr" id="program">
+    <div class="container">
+      <p class="eyebrow reveal">The Program</p>
+      <h2 class="reveal">The System Behind The Ascent</h2>
+      <p class="section-sub reveal">Here's exactly what you get: no fluff, no guesswork, no missing pieces.</p>
+
+      <div class="pillar-grid reveal-group">
+        <div class="pillar reveal">
+          <span class="pillar-num">01</span>
+          <h3>Training Mastery</h3>
+          <p>A structured, progressive training program built around your schedule and gym access, so you build muscle while losing fat, instead of just shrinking.</p>
+        </div>
+        <div class="pillar reveal">
+          <span class="pillar-num">02</span>
+          <h3>Anti-Diet Nutrition</h3>
+          <p>Zero foods off limits. Built around protein and simple daily targets so pizza nights and eating out fit inside the plan instead of breaking it.</p>
+        </div>
+        <div class="pillar reveal">
+          <span class="pillar-num">03</span>
+          <h3>Lifestyle Accountability</h3>
+          <p>Weekly 1-on-1 video check-ins reviewing your actual week, plus WhatsApp access in between, so falling off gets caught in days, not months. Everything runs through one branded app: workouts, habits, and check-ins in one place, plus 50+ resources on training, nutrition, mindset, and habits.</p>
+        </div>
+      </div>
+
+      <div class="section-cta reveal">
+        <p>Ready to start ascending?</p>
+        <a href="apply.html" class="btn btn-primary btn-small">Apply Now For Strategy Call</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY IT'S DIFFERENT -->
+  <section class="section" id="different">
+    <div class="container">
+      <p class="eyebrow reveal">Why It's Different</p>
+      <h2 class="reveal">This Isn't Another App, Program, or Diet</h2>
+
+      <div class="compare-grid reveal-group">
+        <div class="compare-row reveal">
+          <span class="compare-not"><span class="icon-x">✕</span>Not a $20/month app with zero accountability</span>
+          <span class="compare-arrow">→</span>
+          <span class="compare-is"><span class="icon-check">✓</span>Real 1-on-1 weekly attention from someone who's walked the path</span>
+        </div>
+        <div class="compare-row reveal">
+          <span class="compare-not"><span class="icon-x">✕</span>Not a 500-client influencer program where you're a number</span>
+          <span class="compare-arrow">→</span>
+          <span class="compare-is"><span class="icon-check">✓</span>A coach who actually knows your week, your struggles, your wins</span>
+        </div>
+        <div class="compare-row reveal">
+          <span class="compare-not"><span class="icon-x">✕</span>Not a $70/session local trainer who sees you one hour a week</span>
+          <span class="compare-arrow">→</span>
+          <span class="compare-is"><span class="icon-check">✓</span>Support between sessions, not just during them</span>
+        </div>
+        <div class="compare-row reveal">
+          <span class="compare-not"><span class="icon-x">✕</span>Not another restrictive macro-tracking plan</span>
+          <span class="compare-arrow">→</span>
+          <span class="compare-is"><span class="icon-check">✓</span>The exact opposite of the approach that broke you before</span>
+        </div>
+      </div>
+
+      <div class="section-cta reveal">
+        <p>Ready to start ascending?</p>
+        <a href="apply.html" class="btn btn-primary btn-small">Apply Now For Strategy Call</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- GUARANTEE -->
+  <section class="section alt-bg glow-bl" id="guarantee">
+    <div class="container">
+      <div class="guarantee-box reveal">
+        <p class="eyebrow">The Ascend Guarantee</p>
+        <h2>You Only Fail By <span class="highlight underline-accent">Quitting</span></h2>
+        <p class="guarantee-lead">
+          Everything you need to know about training and nutrition is already free online.
+          What's actually missing for most guys isn't information: it's accountability.
+          That's the job: making sure you follow through, even when motivation runs out.
+        </p>
+        <p class="guarantee-quote">
+          "If you follow the system, show up to your check-ins, and do the work, and
+          you haven't hit your goal by the end of our time together, I will keep coaching
+          you for free until you do. The only way you can fail this program is by quitting."
+        </p>
+      </div>
+
+      <div class="section-cta reveal">
+        <p>Ready to start ascending?</p>
+        <a href="apply.html" class="btn btn-primary btn-small">Apply Now For Strategy Call</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- APPLY NOW -->
+  <section class="section apply-section glow-tr" id="apply">
+    <div class="container">
+      <p class="eyebrow reveal">Apply Now</p>
+      <h2 class="reveal">Ready To Ascend?</h2>
+      <p class="section-sub reveal">Takes less than 5 minutes. We read every application personally.</p>
+
+      <div class="apply-cta reveal">
+        <a href="apply.html" class="btn-mega">
+          <span class="btn-mega-title">Apply Now</span>
+          <span class="btn-mega-caption">Takes less than 5 minutes · We read every application</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section alt-bg" id="faq">
+    <div class="container">
+      <p class="eyebrow reveal">FAQ</p>
+      <h2 class="reveal">Questions? Answered.</h2>
+
+      <div class="faq-list reveal-group">
+        <div class="faq-item reveal">
+          <button class="faq-question">
+            <span>What if I've failed every diet before?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>That's exactly who this is built for. Most guys who join have failed multiple diets, usually because those diets restricted too much for too long. This system is built to fit your life, not fight it.</p>
+          </div>
+        </div>
+        <div class="faq-item reveal">
+          <button class="faq-question">
+            <span>Is this just another restrictive plan in disguise?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>No. Zero foods are off limits. Pizza nights, eating out, drinks with friends. All of it fits inside the plan. This was built specifically as the opposite of the strict, all-or-nothing approach.</p>
+          </div>
+        </div>
+        <div class="faq-item reveal">
+          <button class="faq-question">
+            <span>Is this actually legit, or another Instagram program?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>This is built and run by someone who lost 60+ lbs using this exact system, not a theory-only coach. You get real 1-on-1 weekly check-ins, not an automated app with your name on it.</p>
+          </div>
+        </div>
+        <div class="faq-item reveal">
+          <button class="faq-question">
+            <span>What if I fall off track mid-program?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>That's what weekly check-ins and WhatsApp access are for. Falling off gets caught in days, not months, and the guarantee means we don't stop until you hit your goal.</p>
+          </div>
+        </div>
+        <div class="faq-item reveal">
+          <button class="faq-question">
+            <span>Do I need a gym membership?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>No, your training program is built around whatever access you already have, whether that's a full gym, a small home setup, or something in between.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-cta reveal">
+        <p>Ready to start ascending?</p>
+        <a href="apply.html" class="btn btn-primary btn-small">Apply Now For Strategy Call</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <a href="#top" class="logo">
+      <svg class="logo-icon" viewBox="0 0 200 200" aria-hidden="true"><path fill-rule="evenodd" clip-rule="evenodd" d="M100 12L190 188H10L100 12ZM100 88L142 178H58L100 88Z" fill="currentColor"/><path d="M100 140L124 182H76L100 140Z" fill="currentColor"/></svg>
+    </a>
+    <div class="social-links">
+      <!-- Replace href="#" with your real social links -->
+      <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.5" r="1"></circle></svg></a>
+      <a href="#" aria-label="TikTok"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M16.5 3c.3 2 1.7 3.6 3.7 3.9v2.9c-1.4 0-2.7-.4-3.7-1.2v6.6c0 3.1-2.5 5.6-5.6 5.6S5.3 17.3 5.3 14.2c0-3 2.3-5.4 5.2-5.6v3c-1.2.2-2.2 1.3-2.2 2.6 0 1.5 1.2 2.7 2.7 2.7s2.7-1.2 2.7-2.7V3h2.8Z"></path></svg></a>
+      <a href="#" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2.5" y="5.5" width="19" height="13" rx="4"></rect><path d="M10.5 9.5v5l4.3-2.5-4.3-2.5Z" fill="currentColor" stroke="none"></path></svg></a>
+    </div>
+    <p class="footer-copy">© <span id="year"></span> Project Ascend. All rights reserved.</p>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="js/hero-canvas.js"></script>
+<script src="js/script.js"></script>
+</body>
+</html>
