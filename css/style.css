@@ -221,7 +221,7 @@ h2 {
   transition: padding 0.35s ease, background-color 0.35s ease, backdrop-filter 0.35s ease, box-shadow .35s ease;
 }
 .site-header.scrolled {
-  padding: 0.8rem 0;
+  padding: 1rem 0;
   background: color-mix(in srgb, var(--bg) 78%, transparent);
   backdrop-filter: blur(14px);
   box-shadow: 0 1px 0 var(--border);
@@ -236,7 +236,7 @@ h2 {
   align-items: center;
   padding: 4px;
 }
-.logo-icon { width: 26px; height: 26px; flex-shrink: 0; color: var(--accent); }
+.logo-icon { display: block; height: 42px; width: auto; max-width: 220px; flex-shrink: 0; object-fit: contain; }
 @media (min-width: 901px) {
   .logo { font-size: 1.4rem; }
 }
@@ -372,7 +372,7 @@ h2 {
   min-height: 100vh;
   display: flex;
   align-items: center;
-  padding: 8rem 0 2.5rem;
+  padding: 8rem 0 1.75rem;
   overflow: hidden;
   isolation: isolate;
   color: var(--hero-text);
@@ -396,7 +396,7 @@ h2 {
   border-radius: 20px;
   overflow: hidden;
   background: var(--hero-black);
-  box-shadow: 0 0 25px rgba(0, 247, 245, 0.4);
+  box-shadow: 0 0 25px rgba(255, 255, 255, 0.35), 0 0 40px rgba(0, 247, 245, 0.45);
 }
 .hero-coach-image img {
   display: block;
@@ -481,11 +481,11 @@ h2 {
    room to wrap instead of forcing the full-width single-line size. */
 .hero-columns .ascend-headline .line-1 {
   white-space: normal;
-  font-size: clamp(1.8rem, 3.4vw, 2.6rem);
+  font-size: clamp(2.4rem, 4.53vw, 3.5rem);
 }
 .hero-columns .ascend-headline .line-2 {
   white-space: normal;
-  font-size: clamp(1.15rem, 1.9vw, 1.55rem);
+  font-size: clamp(1.5rem, 2.5vw, 2.05rem);
 }
 .ascend-teal { color: var(--hero-teal); text-shadow: 0 0 18px var(--hero-teal-glow); }
 .ascend-headline-word {
@@ -515,7 +515,8 @@ h2 {
 }
 .ascend-star svg { width: 100%; height: 100%; display: block; }
 :root[data-theme='light'] .ascend-headline-word {
-  background: linear-gradient(120deg, #0a8a99 0%, #9fe9f0 32%, var(--hero-teal) 58%, #04333c 100%);
+  background: linear-gradient(120deg, #0a8a99 0%, #5fd0da 32%, var(--hero-teal) 58%, #04333c 100%);
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3), 0 0 1px rgba(0, 0, 0, 0.25);
 }
 .ascend-subhead {
   font-family: var(--hero-font-display);
@@ -596,7 +597,7 @@ h2 {
 }
 .ascend-footer-line {
   margin: 2.5rem auto 0;
-  font-size: 15px;
+  font-size: 10px;
   color: var(--hero-grey-med);
   text-align: center;
   max-width: 640px;
@@ -608,7 +609,7 @@ h2 {
 }
 
 /* ---------- Sections ---------- */
-.section { position: relative; z-index: 1; padding: 2.5rem 0; overflow: hidden; scroll-margin-top: 90px; }
+.section { position: relative; z-index: 1; padding: 1.75rem 0; overflow: hidden; scroll-margin-top: 90px; }
 .alt-bg { background: color-mix(in srgb, var(--bg-soft) 45%, transparent); }
 :root[data-theme='light'] .alt-bg { background: var(--bg-soft); }
 
@@ -671,18 +672,36 @@ h2 {
   gap: 3.5rem;
   align-items: center;
 }
-.who-i-am-image {
+.about-label {
+  position: absolute;
+  z-index: 2;
+  top: 10px;
+  font-family: var(--font-display);
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: rgba(0, 0, 0, 0.7);
+  color: #00f7f5;
+  box-shadow: 0 0 12px rgba(0, 247, 245, 0.4);
+}
+.about-label-before { left: 10px; }
+.about-label-after { right: 10px; }
+.about-me-image {
+  position: relative;
   width: 100%;
   max-width: 420px;
   border-radius: 20px;
   background: var(--surface);
   border: 1px dashed var(--border);
   overflow: hidden;
-  box-shadow: 0 0 25px rgba(0, 247, 245, 0.4);
+  box-shadow: 0 0 25px rgba(255, 255, 255, 0.35), 0 0 40px rgba(0, 247, 245, 0.45);
   color: var(--text-faint);
   font-size: 0.9rem;
 }
-.who-i-am-image img { display: block; width: 100%; height: auto; }
+.about-me-image img { display: block; width: 100%; height: auto; }
 .who-copy p { color: var(--text-muted); margin-bottom: 1.1rem; }
 .who-copy h2 { color: var(--text); }
 
@@ -690,7 +709,7 @@ h2 {
 .glow-image {
   border-radius: 20px;
   overflow: hidden;
-  box-shadow: 0 0 25px rgba(0, 247, 245, 0.4);
+  box-shadow: 0 0 25px rgba(255, 255, 255, 0.35), 0 0 40px rgba(0, 247, 245, 0.45);
 }
 .glow-image img { display: block; width: 100%; height: auto; }
 
@@ -820,11 +839,11 @@ h2 {
   position: relative;
   width: 100%;
   height: auto;
-  border-radius: var(--radius-lg);
+  border-radius: 20px;
   background: var(--surface);
   border: 1px dashed var(--border);
-  overflow: visible;
-  box-shadow: 0 0 25px rgba(0, 247, 245, 0.4);
+  overflow: hidden;
+  box-shadow: 0 0 25px rgba(255, 255, 255, 0.35), 0 0 40px rgba(0, 247, 245, 0.45);
   color: var(--text-faint);
   font-size: 0.9rem;
   transition: transform .3s ease, border-color .3s ease, box-shadow .3s ease;
@@ -960,6 +979,17 @@ h2 {
 #apply .container { text-align: center; }
 #apply h2, #apply .section-sub { margin-left: auto; margin-right: auto; }
 .apply-form-container { min-height: 60vh; }
+.apply-intro {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(1.3rem, 2.4vw, 1.7rem);
+  line-height: 1.4;
+  color: var(--text);
+  max-width: 62ch;
+}
 .booking-reminder {
   max-width: 620px;
   margin: 0 0 2rem;
@@ -1001,8 +1031,8 @@ h2 {
   justify-content: center;
   gap: 1.2rem;
   flex-wrap: wrap;
-  margin-top: 3rem;
-  padding-top: 2.5rem;
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
   border-top: 1px solid var(--border);
 }
 .section-cta p { color: var(--text-muted); font-weight: 600; font-size: 0.95rem; }
@@ -1072,7 +1102,7 @@ h2 {
 /* ---------- Responsive ---------- */
 @media (max-width: 900px) {
   .who-grid { grid-template-columns: 1fr; }
-  .who-i-am-image { max-width: 290px; margin: 0 auto; }
+  .about-me-image { max-width: 290px; margin: 0 auto; }
   .card-grid { grid-template-columns: 1fr; }
   .pillar-grid { grid-template-columns: 1fr; }
   .testimonial-grid { grid-template-columns: 1fr; }
