@@ -186,30 +186,25 @@ h2 {
   100% { transform: translateY(-110vh) translateX(20px); opacity: 0; }
 }
 
-/* ---------- Custom cursor ---------- */
-@media (hover: hover) and (pointer: fine) {
-  html { cursor: none; }
-  a, button, .faq-question { cursor: none; }
-}
-.custom-cursor {
+/* ---------- Cursor glow (native arrow stays; this just adds a soft trailing glow) ---------- */
+#cursor-glow {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 16px;
-  height: 16px;
+  width: 40px;
+  height: 40px;
+  border-radius: 999px;
   pointer-events: none;
-  z-index: 9999;
+  background: radial-gradient(circle, rgba(0, 247, 245, 0.35), transparent 60%);
   transform: translate(-50%, -50%);
-  transition: opacity 0.2s ease, transform 0.15s ease;
+  transition: transform 0.12s ease-out;
+  z-index: 9999;
   opacity: 0;
-  color: var(--hero-teal);
-  filter: drop-shadow(0 0 4px var(--hero-teal)) drop-shadow(0 0 9px var(--hero-teal-glow)) drop-shadow(0 0 18px var(--hero-teal-glow));
 }
-.custom-cursor svg { width: 100%; height: 100%; display: block; }
-.custom-cursor.is-active { opacity: 1; }
-.custom-cursor.is-hovering { transform: translate(-50%, -50%) scale(1.5); }
+#cursor-glow.is-active { opacity: 1; }
 @media (hover: none), (pointer: coarse) {
-  .custom-cursor { display: none; }
+  #cursor-glow { display: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  #cursor-glow { display: none; }
 }
 
 /* ---------- Header ---------- */
@@ -372,7 +367,7 @@ h2 {
   min-height: 100vh;
   display: flex;
   align-items: center;
-  padding: 8rem 0 1.75rem;
+  padding: 8rem 0 0.6rem;
   overflow: hidden;
   isolation: isolate;
   color: var(--hero-text);
@@ -425,7 +420,7 @@ h2 {
   background: var(--hero-charcoal);
   border: 1px solid var(--hero-teal-border);
   font-family: var(--hero-font-display);
-  font-size: 11.5px;
+  font-size: 9px;
   font-weight: 700;
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -447,7 +442,7 @@ h2 {
 }
 .ascend-badge-brand { font-style: italic; }
 @media (max-width: 640px) {
-  .ascend-badge { padding: 0.3rem 0.7rem; font-size: 10.25px; gap: 0.4em; }
+  .ascend-badge { padding: 0.3rem 0.7rem; font-size: 8px; gap: 0.4em; }
   .ascend-badge-dot { width: 5px; height: 5px; }
 }
 @media (prefers-reduced-motion: reduce) {
@@ -521,7 +516,7 @@ h2 {
 .ascend-subhead {
   font-family: var(--hero-font-display);
   font-weight: 700;
-  font-size: clamp(1.44rem, 3vw, 1.88rem);
+  font-size: clamp(0.72rem, 1.5vw, 0.94rem);
   line-height: 1.35;
   color: var(--hero-text);
   max-width: 620px;
@@ -534,7 +529,7 @@ h2 {
   text-decoration-thickness: 2px;
   text-underline-offset: 4px;
 }
-.ascend-body { margin: 0; font-size: 18.75px; line-height: 1.6; max-width: 620px; text-align: left; }
+.ascend-body { margin: 0; font-size: 14px; line-height: 1.6; max-width: 620px; text-align: left; }
 .ascend-body .l1 { display: block; color: var(--hero-grey-med); font-weight: 500; margin: 0 0 0.35rem; }
 .ascend-body .l2 { display: block; color: var(--hero-grey-light); font-style: italic; font-weight: 400; margin: 0; }
 
@@ -596,7 +591,7 @@ h2 {
   text-shadow: none;
 }
 .ascend-footer-line {
-  margin: 2.5rem auto 0;
+  margin: 0.85rem auto 0;
   font-size: 10px;
   color: var(--hero-grey-med);
   text-align: center;

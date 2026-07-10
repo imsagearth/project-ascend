@@ -2,44 +2,13 @@ document.documentElement.classList.remove('no-js');
 
 var prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-/* ---------- Custom cursor ---------- */
-var customCursor = document.getElementById('customCursor');
-if (customCursor && window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
-  var cursorTargetX = 0, cursorTargetY = 0;
-  var cursorX = 0, cursorY = 0;
-  var cursorStarted = false;
-
+/* ---------- Cursor glow (native arrow cursor stays; this just trails a soft glow) ---------- */
+var cursorGlow = document.getElementById('cursor-glow');
+if (cursorGlow && !prefersReducedMotion && window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
   window.addEventListener('mousemove', function (e) {
-    cursorTargetX = e.clientX;
-    cursorTargetY = e.clientY;
-    if (!cursorStarted) {
-      cursorStarted = true;
-      cursorX = cursorTargetX;
-      cursorY = cursorTargetY;
-      customCursor.classList.add('is-active');
-    }
+    cursorGlow.style.transform = 'translate(' + e.clientX + 'px, ' + e.clientY + 'px) translate(-50%, -50%)';
+    cursorGlow.classList.add('is-active');
   });
-
-  document.addEventListener('mouseover', function (e) {
-    if (e.target.closest('a, button, .faq-question')) customCursor.classList.add('is-hovering');
-  });
-  document.addEventListener('mouseout', function (e) {
-    if (e.target.closest('a, button, .faq-question')) customCursor.classList.remove('is-hovering');
-  });
-
-  function tickCursor() {
-    if (prefersReducedMotion) {
-      cursorX = cursorTargetX;
-      cursorY = cursorTargetY;
-    } else {
-      cursorX += (cursorTargetX - cursorX) * 0.2;
-      cursorY += (cursorTargetY - cursorY) * 0.2;
-    }
-    customCursor.style.left = cursorX + 'px';
-    customCursor.style.top = cursorY + 'px';
-    requestAnimationFrame(tickCursor);
-  }
-  tickCursor();
 }
 
 /* ---------- Footer year ---------- */
