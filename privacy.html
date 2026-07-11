@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Apply Now: Project Ascend</title>
-<meta name="description" content="Apply for 1-on-1 coaching with Project Ascend. Takes less than 5 minutes.">
+<title>Privacy Policy: Project Ascend</title>
+<meta name="description" content="Privacy Policy for Project Ascend.">
 
 <!-- Theme is applied before paint to avoid a flash of the wrong theme -->
 <script>
@@ -31,6 +31,10 @@
 <!-- Cursor glow: soft cyan glow that follows the mouse, native arrow cursor stays -->
 <div id="cursor-glow" aria-hidden="true"></div>
 
+<!-- Global cosmic background: fixed full-viewport canvas + readability scrim, sits behind every section -->
+<canvas id="bgCanvas" class="bg-canvas" aria-hidden="true"></canvas>
+<div class="bg-scrim" aria-hidden="true"></div>
+
 <!-- Ambient rising particles behind everything -->
 <div class="ambient-particles" aria-hidden="true" id="particles"></div>
 
@@ -50,14 +54,44 @@
 
 <main>
   <section class="section apply-section glow-tr" style="padding-top: 9rem;">
-    <div class="container apply-form-container">
-      <p class="eyebrow reveal">Step 1 of 2</p>
-      <p class="section-sub apply-intro">Take a minute and <span class="accent-italic">be honest</span> when filling out this form. It gives me a <span class="accent-italic">clear picture</span> of where you&rsquo;re at and helps us see if <span class="accent-italic">working together</span> actually makes sense.</p>
-      <!--
-        Once submitted, set this form's redirect (in your Jotform account's
-        Settings -> Thank You Page) to point to: booking.html
-      -->
-      <script type="text/javascript" src="https://www.jotform.com/jsform/261072031762044"></script>
+    <div class="container legal-content">
+      <h1>Privacy Policy</h1>
+      <p class="legal-updated">Last updated: 7/10/2026</p>
+
+      <p>Project Ascend ("we," "us," "our") operates this website and coaching services. This Privacy Policy explains what information we collect, how we use it, and your rights regarding that information.</p>
+
+      <h2>Information We Collect</h2>
+      <ul>
+        <li>Contact info you provide (name, email, phone number) when you apply, book a call, or become a client.</li>
+        <li>Health and fitness information you share during onboarding, check-ins, and coaching (e.g. weight, goals, training history, dietary habits).</li>
+        <li>Payment information, processed securely through Stripe. We do not store your full payment details ourselves.</li>
+        <li>Usage data from this website (e.g. via analytics tools) such as pages visited and general browsing behavior.</li>
+      </ul>
+
+      <h2>How We Use Your Information</h2>
+      <ul>
+        <li>To provide coaching services, respond to inquiries, and communicate with you about your program.</li>
+        <li>To improve our website, content, and coaching systems.</li>
+        <li>To send you updates or offers you've opted into (you can unsubscribe anytime).</li>
+      </ul>
+
+      <h2>Third-Party Services</h2>
+      <p>We use third-party tools to run this business, including coaching software, scheduling tools (Calendly), and Stripe for payment processing. These providers have their own privacy practices governing any data they process on our behalf.</p>
+
+      <h2>Data Sharing</h2>
+      <p>We do not sell your personal information. We only share information with service providers as needed to operate our business, or if required by law.</p>
+
+      <h2>Your Rights</h2>
+      <p>You may request access to, correction of, or deletion of your personal information at any time by contacting us.</p>
+
+      <h2>Data Security</h2>
+      <p>We take reasonable steps to protect your information, but no method of transmission or storage is 100% secure.</p>
+
+      <h2>Changes to This Policy</h2>
+      <p>We may update this policy from time to time. Continued use of our services after changes means you accept the updated policy.</p>
+
+      <h2>Contact Us</h2>
+      <p>If you have questions about this Privacy Policy, contact us at <a href="mailto:tbncoach@gmail.com">tbncoach@gmail.com</a>.</p>
     </div>
   </section>
 </main>
@@ -83,6 +117,7 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="js/hero-canvas.js"></script>
 <script src="js/script.js"></script>
 </body>
 </html>

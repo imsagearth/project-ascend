@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Apply Now: Project Ascend</title>
-<meta name="description" content="Apply for 1-on-1 coaching with Project Ascend. Takes less than 5 minutes.">
+<title>Terms and Conditions: Project Ascend</title>
+<meta name="description" content="Terms and Conditions for Project Ascend.">
 
 <!-- Theme is applied before paint to avoid a flash of the wrong theme -->
 <script>
@@ -31,6 +31,10 @@
 <!-- Cursor glow: soft cyan glow that follows the mouse, native arrow cursor stays -->
 <div id="cursor-glow" aria-hidden="true"></div>
 
+<!-- Global cosmic background: fixed full-viewport canvas + readability scrim, sits behind every section -->
+<canvas id="bgCanvas" class="bg-canvas" aria-hidden="true"></canvas>
+<div class="bg-scrim" aria-hidden="true"></div>
+
 <!-- Ambient rising particles behind everything -->
 <div class="ambient-particles" aria-hidden="true" id="particles"></div>
 
@@ -50,14 +54,41 @@
 
 <main>
   <section class="section apply-section glow-tr" style="padding-top: 9rem;">
-    <div class="container apply-form-container">
-      <p class="eyebrow reveal">Step 1 of 2</p>
-      <p class="section-sub apply-intro">Take a minute and <span class="accent-italic">be honest</span> when filling out this form. It gives me a <span class="accent-italic">clear picture</span> of where you&rsquo;re at and helps us see if <span class="accent-italic">working together</span> actually makes sense.</p>
-      <!--
-        Once submitted, set this form's redirect (in your Jotform account's
-        Settings -> Thank You Page) to point to: booking.html
-      -->
-      <script type="text/javascript" src="https://www.jotform.com/jsform/261072031762044"></script>
+    <div class="container legal-content">
+      <h1>Terms and Conditions</h1>
+      <p class="legal-updated">Last updated: 7/10/2026</p>
+
+      <p>By using this website or enrolling in coaching services with Project Ascend ("we," "us," "our"), you agree to the following terms.</p>
+
+      <h2>Educational Purpose Only</h2>
+      <p>Project Ascend provides fitness and nutrition coaching for educational and informational purposes. Nothing provided constitutes medical advice. Always consult a physician before starting any new training or nutrition program, especially if you have an existing medical condition or injury.</p>
+
+      <h2>No Guaranteed Results</h2>
+      <p>Any results, testimonials, or transformations shown reflect individual experiences and are not guarantees of what you will achieve. Results depend on your individual effort, consistency, and circumstances.</p>
+
+      <h2>Assumption of Risk</h2>
+      <p>Participation in any training or nutrition program carries inherent risk, including risk of injury. By enrolling, you voluntarily assume all risks associated with your participation and agree to immediately report any pain, discomfort, or unusual symptoms.</p>
+
+      <h2>Client Responsibilities</h2>
+      <p>You agree to provide accurate health and personal information, follow program guidance responsibly, and consult a medical professional as needed. You are responsible for your own safety during any activity related to this program.</p>
+
+      <h2>Payments, Refunds, and Cancellation</h2>
+      <p>All payments are processed securely through Stripe. All sales are final, we do not offer refunds under any circumstances. There is no option to cancel mid-program once enrolled. If a payment is not received on time, access to coaching, check-ins, and program materials will be paused until payment is made.</p>
+
+      <h2>Limitation of Liability</h2>
+      <p>To the fullest extent permitted by law, Project Ascend and its owner are not liable for any injury, loss, or damage arising from participation in coaching services, except where liability cannot legally be excluded.</p>
+
+      <h2>Intellectual Property</h2>
+      <p>All content, training plans, and materials provided are for your personal use only and may not be copied, shared, or redistributed without permission.</p>
+
+      <h2>Governing Law</h2>
+      <p>These terms are governed by the laws of the State of California.</p>
+
+      <h2>Changes to These Terms</h2>
+      <p>We may update these terms from time to time. Continued use of our services after changes means you accept the updated terms.</p>
+
+      <h2>Contact Us</h2>
+      <p>Questions about these terms can be sent to <a href="mailto:tbncoach@gmail.com">tbncoach@gmail.com</a>.</p>
     </div>
   </section>
 </main>
@@ -83,6 +114,7 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="js/hero-canvas.js"></script>
 <script src="js/script.js"></script>
 </body>
 </html>
